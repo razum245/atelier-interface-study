@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f6f0ea"><title>ATELIER — впечатления после тестирования</title><link rel="stylesheet" href="./css/research.css"><script src="./js/config.js"></script><script defer src="./js/survey.js"></script></head>
+<body class="research-page survey-page">
+<main class="survey-shell">
+  <header class="research-header"><span class="research-logo">ATELIER<span>.</span></span><span>ФИНАЛЬНАЯ АНКЕТА / 03</span></header>
+  <div class="survey-layout"><section class="survey-intro"><span class="research-kicker">POST-EXPERIENCE</span><h1>Как вам <em>было?</em></h1><p>Выполнение заданий завершено. Оцените свои впечатления от интерфейса. Здесь нет правильных и неправильных ответов.</p><div class="survey-photo"><img src="./assets/look7.webp" alt="Образ из коллекции ATELIER" width="1122" height="1402"></div></section>
+  <section class="survey-card"><form id="studyForm" name="study-results" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="study-results"><p class="honeypot" aria-hidden="true"><label>Leave this blank: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+    <input type="hidden" name="participant_id"><input type="hidden" name="version"><input type="hidden" name="assigned_at"><input type="hidden" name="device_width"><input type="hidden" name="firstlook_beauty"><input type="hidden" name="firstlook_ease">
+    <input type="hidden" name="task_1_ms"><input type="hidden" name="task_2_ms"><input type="hidden" name="task_3_ms"><input type="hidden" name="task_1_success"><input type="hidden" name="task_2_success"><input type="hidden" name="task_3_success"><input type="hidden" name="task_1_nontarget"><input type="hidden" name="task_2_nontarget"><input type="hidden" name="task_3_nontarget"><input type="hidden" name="task_1_skipped"><input type="hidden" name="task_2_skipped"><input type="hidden" name="task_3_skipped"><input type="hidden" name="actions_count"><input type="hidden" name="total_ms">
+    <fieldset class="survey-question"><legend><span>01 / ЭСТЕТИКА</span>Насколько привлекательным вам показался сайт?</legend><p>1 — совсем не привлекателен, 7 — очень привлекателен</p><div class="survey-rating" data-survey-rating="beauty"></div></fieldset>
+    <fieldset class="survey-question"><legend><span>02 / УДОБСТВО</span>Насколько удобно было выполнять задания?</legend><p>1 — совсем неудобно, 7 — очень удобно</p><div class="survey-rating" data-survey-rating="usability"></div></fieldset>
+    <fieldset class="survey-question"><legend><span>03 / ПОНЯТНОСТЬ</span>Насколько понятными были элементы управления?</legend><p>1 — совсем непонятны, 7 — полностью понятны</p><div class="survey-rating" data-survey-rating="clarity"></div></fieldset>
+    <label class="survey-textarea"><span>04 / ВАШ КОММЕНТАРИЙ</span>Что оказалось удобным или неудобным?<textarea name="comment" rows="4" maxlength="500" placeholder="Необязательно. Не указывайте личные данные."></textarea></label>
+    <button type="submit" id="submitResults" class="research-primary">Завершить исследование <span>↗</span></button>
+    <p id="surveyStatus" role="status" aria-live="polite" class="research-small">Ответы используются только для учебного исследования.</p>
+  </form>
+  <div id="surveyDone" class="survey-done" hidden><div class="done-mark">✓</div><h2>Спасибо за участие!</h2><p id="doneMessage">Ваши оценки сохранены.</p><button id="downloadBackup" type="button" class="research-primary">Скачать копию результатов</button></div></section></div>
+  <footer class="research-footer"><span>ATELIER / Interface Experience</span><span>Благодарим за ваше время</span></footer>
+</main>
+</body></html>
