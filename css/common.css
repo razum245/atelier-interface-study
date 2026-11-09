@@ -22,3 +22,26 @@ main{display:block}.hero{width:min(var(--page),100%);margin:0 auto;display:grid;
 
 .firstlook-launcher{position:fixed;left:18px;bottom:18px;z-index:91;background:#171717;color:#fff;border:1px solid #171717;padding:14px 20px;font-size:12px;letter-spacing:.03em;box-shadow:0 12px 35px rgba(0,0,0,.25)}
 .firstlook-launcher span{margin-left:15px}
+
+
+/* Уведомление о добавлении товара в корзину */
+.toast {
+  position: fixed;
+  top: 20px;
+  bottom: auto;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 15px 22px;
+  max-width: calc(100vw - 32px);
+  background: #222222;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+  z-index: 9999;
+}
