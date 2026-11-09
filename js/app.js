@@ -200,11 +200,22 @@ function notify(text) {
     progressTick('favorite',id,!found);
     const detail=$('#detailDialog');if(detail.open){const button=detail.querySelector(`[data-favorite="${id}"]`);if(button)button.textContent=found?'В избранное ♡':'Убрать из избранного';}
   }
-  function addCart(id){
-    if(!get(id))return;
-    state.cart[id]=(state.cart[id]||0)+1;store();refreshCounts();renderCart();
-    notify('Добавлено в корзину');progressTick('cart',id);
-  }
+  
+function addCart(id) {
+  const product = get(id);
+  if (!product) return;
+
+  state.cart[id] = (state.cart[id] || 0) + 1;
+
+  store();
+  refreshCounts();
+  renderCart();
+
+  notify('✓ ' + product.name + ' добавлен в корзину');
+
+  progressTick('cart', id);
+}
+
   function changeQty(id,delta){
     if(!get(id))return;
     state.cart[id]=Math.max(0,(state.cart[id]||0)+delta);
