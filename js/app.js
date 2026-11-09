@@ -17,9 +17,36 @@
   const money = n => new Intl.NumberFormat('ru-RU').format(n) + ' ₽';
   const store = () => (study ? sessionStorage : localStorage).setItem(stateKey, JSON.stringify(state));
   const storeSession = () => {if (study) localStorage.setItem(researchKey, JSON.stringify(session));};
-  const toast = $('#toast');
-  let toastTimer;
-  function notify(text){toast.textContent = text;toast.hidden = false;clearTimeout(toastTimer);toastTimer = setTimeout(() => toast.hidden = true, 2400);}
+  
+const toast = $('#toast');
+let toastTimer;
+
+toast.setAttribute('popover', 'manual');
+
+function notify(text) {
+  toast.textContent = text;
+  toast.hidden = false;
+
+  clearTimeout(toastTimer);
+
+  if (typeof toast.showPopover === 'function') {
+    if (!toast.matches(':popover-open')) {
+      toast.showPopover();
+    }
+  }
+
+  toastTimer = setTimeout(() => {
+    if (
+      typeof toast.hidePopover === 'function' &&
+      toast.matches(':popover-open')
+    ) {
+      toast.hidePopover();
+    }
+
+    toast.hidden = true;
+  }, 2500);
+}
+
   function modal(id){const dialog = $(id);if (dialog && !dialog.open) dialog.showModal();}
   function closeDialog(dialog){if (dialog?.open) dialog.close();}
   function totalCount(){return Object.values(state.cart).reduce((n, qty) => n + Number(qty || 0), 0);}
